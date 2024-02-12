@@ -78,6 +78,73 @@ y_pred= np.array([1,1.7,1.5])
 mean_absolute_error(y_true, y_pred)
 ```
 
+### 3️⃣ **Weighted Mean Absolute Error (WMAE):**
+A variant of the Mean Absolute Error (MAE) that assigns different weights to different data points. Weighted Mean Absolute Error (WMAE) is commonly used in situations where not all data points are equally important, and you want to give different weights to different observations when evaluating the performance of a model. The formula for WMAE is:
+
+![WMAE](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F14185421%2F855eccb1ffa5cd992b582a70b961f0d1%2Fwmae.png?generation=1707723118894000&alt=media)
+- n is the number of rows
+- y_i is the actual values
+- ŷ_i is the predicted values
+- w_i are weights
+
+```
+import numpy as np
+
+def weighted_mean_absolute_error(y_true, y_pred, weights):
+    # Ensure the inputs are numpy arrays
+    y_true = np.array(y_true)
+    y_pred = np.array(y_pred)
+    weights = np.array(weights)
+    
+    # Calculate the absolute errors and apply weights
+    absolute_errors = np.abs(y_true - y_pred)
+    weighted_errors = absolute_errors * weights
+    
+    # Calculate the weighted mean absolute error
+    wmae = np.sum(weighted_errors) / np.sum(weights)
+    
+    return wmae
+
+# Example usage:
+actual_values = [10, 20, 30, 40]
+predicted_values = [12, 18, 25, 35]
+data_weights = [1, 2, 1, 1]
+
+wmae_result = weighted_mean_absolute_error(actual_values, predicted_values, data_weights)
+print(f"Weighted Mean Absolute Error: {wmae_result:.4f}")
+```
+
+OR using tensorflow
+
+```
+import tensorflow as tf
+
+def weighted_mean_absolute_error(y_true, y_pred, weights):
+    # Ensure the inputs are TensorFlow tensors
+    y_true = tf.convert_to_tensor(y_true, dtype=tf.float32)
+    y_pred = tf.convert_to_tensor(y_pred, dtype=tf.float32)
+    weights = tf.convert_to_tensor(weights, dtype=tf.float32)
+    
+    # Calculate the absolute errors and apply weights
+    absolute_errors = tf.abs(y_true - y_pred)
+    weighted_errors = absolute_errors * weights
+    
+    # Calculate the weighted mean absolute error
+    wmae = tf.reduce_sum(weighted_errors) / tf.reduce_sum(weights)
+    
+    return wmae.numpy()  # Convert TensorFlow tensor to NumPy array for easy printing
+
+# Example usage:
+actual_values = [10, 20, 30, 40]
+predicted_values = [12, 18, 25, 35]
+data_weights = [1, 2, 1, 1]
+
+wmae_result = weighted_mean_absolute_error(actual_values, predicted_values, data_weights)
+print(f"Weighted Mean Absolute Error: {wmae_result:.4f}")
+```
+
+credits WMAE: @bratkovskyevgeny 's [comment](https://www.kaggle.com/discussions/general/475921#2646446)
+
 ## ✅ **Classification Loss Functions:**
 
 ### 1️⃣ **Binary Cross-Entropy Loss / Log Loss:** 
