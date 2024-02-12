@@ -101,4 +101,16 @@ print("p-value:", p_value)
 ```
 
 ## 📢 **Conclusion:**
-Imagine hypothesis testing like being a detective🕵️ trying to solve a mystery. You have a theory, called a hypothesis, about what might be happening. Hypothesis testing helps you figure out if your theory is right or not. It's like being a scientific detective, using data and evidence to decide if your idea is likely true or just a guess. For example, if you believe a new plant fertilizer makes plants grow taller, hypothesis testing lets you check if the data supports this idea or if it's just a coincidence. It's a way to be sure your conclusions are solid and not based on luck. In simple terms, it's a tool to make smarter and more confident decisions in all sorts of areas.
+Imagine hypothesis testing like being a detective🕵️ trying to solve a mystery. You have a theory, called a hypothesis, about what might be happening. **Hypothesis testing helps you figure out if your theory is right or not**. It's like being a scientific detective, using data and evidence to decide if your idea is likely true or just a guess. For example, if you believe a new plant fertilizer makes plants grow taller, hypothesis testing lets you check if the data supports this idea or if it's just a coincidence. It's a way to be sure your conclusions are solid and not based on luck. In simple terms, **it's a tool to make smarter and more confident decisions in all sorts of areas.**
+
+----------------
+
+### References:
+
+Books:
+- "Statistics" by Robert S. Witte and John S. Witte
+- "Introduction to the Practice of Statistics" by David S. Moore, George P. McCabe, and Bruce A. Craig
+- "Statistics for Business and Economics" by Paul Newbold, William L. Carlson, and Betty Thorne
+
+Website:
+- [Khan Academy: Significance tests(hypothesis testing)](https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample)
